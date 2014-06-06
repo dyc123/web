@@ -1,0 +1,1 @@
+<li><span><em class="newDate">[field:pubdate function="MyDate('m-d',@me)"/]</em></span>[<a class="green" href="[field:typeurl /]">[field:typename /]</a>]<a href="[field:arcurl /]">[field:title /]</a></li>

@@ -1,0 +1,66 @@
+﻿<div class="logdiv">
+<STYLE type=text/css>
+#SD_body{FONT-SIZE: 12px;BACKGROUND-COLOR: #86afdd;MARGIN: 0px;}
+td{FONT-SIZE: 12px;}
+</STYLE>
+<SCRIPT language="javascript"> 
+function reload(){
+ document.getElementById('code').src = 'include/code.php?'+Math.random();
+} 
+</SCRIPT> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" height="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=563 align=center>
+        <TBODY>
+        <TR>
+          <TD height=393 background="jpg/AdminLoginBg.jpg">
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width=563>
+              <TBODY>
+              <TR>
+                <TD height=60 width=180>&nbsp;</TD>
+                <TD height=60 width=183>&nbsp;</TD>
+                <TD height=60 width=200>&nbsp;</TD></TR>
+              <TR>
+                <TD height=180 width=180>&nbsp;</TD>
+                <TD height=180 vAlign=center width=183 align=left>
+                  <TABLE border=0 cellSpacing=0 cellPadding=0 width=183>
+                    <TBODY>
+                    <TR>
+                      <TD height=35 width=133 align=left>
+					  <TABLE border=0 cellSpacing=0 cellPadding=0 width=183>
+                          <TBODY>
+                          <TR>
+                            <TD height=35 width=50 align=right>用户：</TD>
+                            <TD height=35 width=133 align=left><INPUT 
+                              style="BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; FONT-FAMILY: Times New Roman; FONT-SIZE: 18px; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid" 
+                              id=UserName maxLength=10 size=11 
+                          name=UserName></TD></TR>
+                          <TR>
+                            <TD height=35 width=50 align=right>密码：</TD>
+                            <TD height=35 width=133 align=left><INPUT 
+                              style="BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; FONT-FAMILY: Times New Roman; FONT-SIZE: 18px; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid" 
+                              id=Password maxLength=10 size=11 type=password 
+                              name=Password></TD></TR>
+                          <TR>
+                            <TD height=35 width=50 align=right>验证：</TD>
+                            <TD height=35 width=133 align=left>
+                              <TABLE border=0 cellSpacing=0 cellPadding=0 
+                              width=133>
+                                <TBODY>
+                                <TR>
+                                <TD height=35 width=80><INPUT 
+                                style="BORDER-BOTTOM: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; FONT-FAMILY: Times New Roman; FONT-SIZE: 18px; BORDER-TOP: #7f9db9 1px solid; BORDER-RIGHT: #7f9db9 1px solid" 
+                                id=ValidCode maxLength=4 size=4 
+                                name=ValidCode></TD>
+                                <TD height=35 width=75><img  id="code" onclick="reload()" src='/include/code.php' width='50' height='20' /></a></TD></TR></TBODY></TABLE></TD></TR>
+                          <TR>
+                            <TD height=35 width=200 align=middle colspan=2><INPUT border=0 id="hylogin" src="jpg/login.jpg" width="80" height="30" type=image><INPUT border=0 id="hyreg"  src="jpg/regist.jpg" width="80" height="30" type=image></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+                <TD height=180 width=200>&nbsp;</TD></TR>
+              <TR>
+                <TD height=153 width=180>&nbsp;</TD>
+                <TD height=153 width=183>&nbsp;</TD>
+                <TD height=153 width=200>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY>
+				</TABLE></TD></TR></TBODY></TABLE>
+</div>

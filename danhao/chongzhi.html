@@ -1,0 +1,62 @@
+<div id="chongzhidiv">
+<div id="chongzhimsg">
+<h3>24小时全自动充值实时到账！再也不用担心晚上充值不到账的问题了</h3>
+<h3>充值分三步 轻松搞定 请点击下面三步 按提示操作！</h3>
+</div>
+<style type="text/css">
+#chongzhidiv a:link,a:visited,a:hover,a:active{text-decoration:none;color:#256bae;}
+.warp{width:649px; height:269px !important; height:271px;border:1px solid #dbdcd7;}
+.main{width:600px; height:269px !important;height:271px;padding:5px; margin-left:40px;overflow:hidden;float:left;}
+.news{position:absolute;z-index:4;width:24px;}
+.news ul{list-style:none;padding:0;margin:0;}
+.news ul li{ height:84px ! important;height:88px;width:30px;margin-bottom:0px;padding-top:5px;text-align:center;cursor:pointer;;vertical-align:middle; background-color:#F5B5B5; border-right:#dbdcd7 solid 1px;border-bottom:#dbdcd7 solid 1px;}
+.news ul li.on{background-color:#0D9DFD; border:#FFFFFF 0px}
+.news span{display:block; margin-top:9px !important; margin-top:20px;}
+.dis{display:block;}
+.undis{display:none;}
+</style>
+ <script type="text/javascript">
+ function g(o){return document.getElementById(o);}
+ function HoverLi(m,n,counter){for(var i=1;i<=counter;i++){g('tb_'+m+i).className='';g('tbc_'+m+i).className='undis';}g('tbc_'+m+n).className='dis';g('tb_'+m+n).className='on';}
+ </script>
+</head>
+<body>
+<div class="warp">
+	<div class="news">
+	<ul>
+	<li class="on" id="tb_11" onmouseover="HoverLi(1,1,3);"><span>第一步</span></li>
+	<li class="" id="tb_12" onmouseover="HoverLi(1,2,3);"><span>第二步</span></li>
+            <li class="" id="tb_13" onmouseover="HoverLi(1,3,3);"><span>第三步</span></li>
+	</ul>
+	</div>
+<div class="dis" id="tbc_11">
+		<div class="main">
+		<div style="background:#EBE571;">
+		<form id="zfbform" method="post" target="_blank"  accept-charset="GBK" onsubmit="document.charset='GBK';" novalidate="novalidate">
+		<div style="display: block;padding-top: 10px;padding-left: 10px;width:360px">
+		支付宝打款帐号:<input name="optEmail" id="zhifuzh" type="text" value="1926154402@qq.com" readonly/>姓名:*旭斌<br/><br/>
+		充值金额(最低1元):<input name="payAmount" id="zhifje" style="width:60px;" type="text" value="50"/>元<p style="font-size:12px;color:red;padding-top:-15px">点击右边支付宝连接图片-->><br/>到支付宝页面完成付款自动跳到下一步骤</p></div>
+		<a href="javascript:void(0)" style="border:none;"><img id="zhifubaolink" style="border:none;margin-left:250px;margin-top:-75px;position:absolute;" src="jpg/alipay.png"></a>
+		<br/><br/>
+		</form>
+		</div>
+		</div>
+	</div>
+	<div class="undis" id="tbc_12">
+		<div class="main"><div style="background:#EBE571;"><div style="display: block;padding:10px;width:500px">支付宝充值金额：<input style="width:60px;" type="text" id="chongzhijg"/>
+		<p style="font-size:13px;color:red;">注意:金额填写错误会导致充值不成功！亲务必检查核对金额，如果填错需要重新提交！</p>
+		支付宝交易号：<input style="width:250px;" type="text" id="chongzhijyh"/>
+		<p style="font-size:13px;color:red;">注意:支付宝交易号一般是28位纯数字，没有字母 如果填写错误会导致充值不成功！亲务必检查核对，如果填错需要重新提交！</p>
+		<input type="button" id="chongzhitj" value="确认无误提交">
+		</div></div></div>
+	</div>
+    	<div class="undis" id="tbc_13">
+		<div class="main" id="zfbfankui">
+		<div id="zfbtj" ></div>
+		<div style="background:#EBE571;"><div style="display: block;padding:10px;width:500px"><p>此页面等待一到两分钟就会显示到账情况 请不要离开此页面哦！</p>
+		<p>如果超过5分钟还没到账请检查一下提交的用户名 金额 <span style="background:red;font-size:30px;color:#EBE571">交易号</span>是否正确哦</p>或者联系客服充值哦！
+		</div></div></div>
+	</div>
+	
+</div>
+</div>

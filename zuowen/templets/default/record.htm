@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+
+<STYLE type="text/css" media="all">
+
+body{ color:#385318; background:#eff5e5; line-height:20px; }
+
+.headerdd { font: normal 12px 微软雅黑; }
+
+.webtxt{ font-family: "微软雅黑";}
+
+#bgtopf{ width:auto; margin:0 auto; background:#fff; height:130px;}
+
+#bagbanner{ width:auto; margin:0 auto; height:380px; background:#3a581a;}
+
+</STYLE>
+
+<LINK rel="stylesheet" type="text/css" href="/css.css"><LINK 
+
+rel="stylesheet" type="text/css" href="/css/lrtk.css">
+
+<STYLE type="text/css">
+
+<!--
+
+body,td,th {
+
+	font-size: 12px;
+
+}
+
+body {background:fixed; background:url(/images/mainbg.jpg); margin:0 auto;}
+
+.STYLE2 {color: #FFFFFF}
+
+.STYLE3 {color: #FF0000}
+
+.STYLE4 {
+
+	color: #BD2139;
+
+	font-weight: bold;
+
+}
+
+.xgu{ float:right; vertical-align:top;}
+
+.xull{ float:left; margin:230px 0 0 165px;}
+
+.toptk{ margin:0 auto; width:1010px; height:123px; margin-bottom:15px;}
+
+.topes{ margin:0 auto; width:1010px;}
+
+-->
+
+</STYLE>
+
+
+
+<SCRIPT type="text/javascript" src="/js/jquery-1.9.1.min.js"></SCRIPT>
+
+
+
+<SCRIPT type="text/javascript" src="/js/archefoucs.js"></SCRIPT>
+
+
+
+<SCRIPT type="text/javascript" src="/js/jquery.js"></SCRIPT>
+
+
+
+<SCRIPT type="text/javascript" src="/js/js.js"></SCRIPT>
+
+
+
+<SCRIPT language="javascript" type="text/javascript">
+
+var flag = true;
+
+function show_select(input,btn,option,value){
+
+           var inputobj=document.getElementById(input); 
+
+           var btnobj=document.getElementById(btn);
+
+           var optionobj=document.getElementById(option);
+
+           var valueobj=document.getElementById(value);
+
+            function chk() {
+
+                if (flag) {
+
+                  document.getElementById(option).style.display = 'none';
+
+                }
+
+             }
+
+        // 50flag
+
+        optionobj.onmouseout = function() {
+
+            setTimeout(chk, 50);
+
+        }
+
+        optionobj.style.display=optionobj.style.display==""?"none":"";
+
+             for (var j=0;j<optionobj.childNodes.length;j++){
+
+                 // optionobj.focus();
+
+                  optionobj.childNodes[j].onmouseover=function (){
+
+                     this.className="qty_items_over";
+
+                    // flag
+
+                    flag = false;
+
+                    };
+
+                  optionobj.childNodes[j].onmouseout=function (){
+
+                     this.className="qty_items_out";
+
+                    // flag
+
+                    flag = true;
+
+                    
+
+                    };
+
+              optionobj.childNodes[j].onclick=function () {
+
+                inputobj.innerHTML=this.innerHTML;
+
+                valueobj.value=this.innerHTML;
+
+                optionobj.style.display="none";
+
+                   a = this.getElementsByTagName('a')[0];
+
+                   h = a.href;
+
+                window.location.href =h;
+
+                   };
+
+                }
+
+              };
+
+</SCRIPT>
+
+<script>
+
+function turnoff(obj){
+
+document.getElementById(obj).style.display="none";
+
+}
+
+</script>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16496"></HEAD>
+
+<BODY>
+
+<DIV class="header">
+
+<div id="bgtopf">
+
+
+
+<DIV class="toptk">
+
+<A href="http://www.iviedu.com/" target="_blank"><img src="/accou/top2.jpg" width="1010" height="123" /></a>
+
+</DIV>
+
+</DIV></DIV><!--[if !IE]>焦点图start<![endif]-->
+
+
+
+<div id="bagbanner">
+
+<DIV class="focusCon">
+
+<DIV class="bannbg">
+
+<DIV class="babg">
+
+<DIV class="headerdd">
+
+<DIV id="gg" class="gg">
+
+<DIV class="ggLoading">
+
+<DIV class="ggLoading2"><EM>精彩活动载入中</EM></DIV></DIV>
+
+<DIV class="ggs">
+
+<DIV id="ggBox" class="ggBox"><A 
+
+title="18所名校 150余个热门专业任选" href="#" target="_blank"><IMG 
+
+alt="" src="/Record/2.jpg"></A><A title="学制短 通过率高 时间自由" href="#" 
+
+target="_blank"><IMG alt="" src="/Record/3.jpg"></A><A title="受益学员谈学习经历" 
+
+href="#" target="_blank"><IMG alt="" src="/Record/4.jpg"></A><a style="z-index: 3; opacity: 4;" title="考研究生考公务员没问题" 
+
+href="#" target="_blank"><img alt="" src="/Record/1.jpg" /></a></DIV></DIV>
+
+<DIV class="ggb">
+
+<DIV id="ggBtns" class="ggBtns"><A class="ggOn" title="考研究生考公务员没问题" href="javascript:void(0)"><EM>正规教育机构</EM></A><A 
+
+title="18所名校 150余个热门专业任选" href="javascript:void(0)"><EM>热门专业众多</EM></A><A title="学制短 通过率高 时间自由" 
+
+href="javascript:void(0)"><EM>学习优势突出</EM></A><A title="受益学员谈学习经历" href="javascript:void(0)"><EM>有学就有所获</EM></A></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+
+<div class="main">
+
+    <div class="w950 bc" style="margin:-10px 0 15px 25px"><a target="_blank'" href="/"><img width="950" height="90" src="/Record/1_130115114109_1.jpg" alt="新春奋斗季"></a></div>
+
+
+
+		 <!--[if !IE]>热门推荐start<![endif]-->
+
+	<div id="hot">
+
+      <div class="hot1">
+
+          <div class="fl">
+
+           <div class="htu"><img src="/Record/school_6.jpg" alt="北京外国语大学"></div>
+
+         <div class="htitl">
+
+           <div class="htxt"><img src="/images/ziti_09.jpg" width="141" height="53" /></div>
+
+          <div class="zbg"><ul>
+
+  <li>家首批"211工程"大学</li>
+
+  <li>外贸及外事翻译人才的主要基地</li></ul></div>
+
+  </div>
+
+       <p class="b-zixi"><strong>其他优势专业：</strong></p>
+
+       <p class="b-zixi">工商管理、会计学、电子商务、信息管理与信息技术、国际经济与贸易、金融学</p>
+
+			<p><a href="tencent://message/?uin=138373701&Site=依米书院&Menu=yes"><img src="/images/road_09.jpg" width="206" height="44" class="imwo" /></a></p></div>
+
+			 </div>
+
+             <div class="hot1">
+
+          <div class="fl">
+
+				<div class="htu"><img src="/Record/school_7.jpg" alt="北京外国语大学"></div>
+
+         <div class="htitl">
+
+           <div class="htxt"><img src="/images/ziti_12.jpg" width="121" height="53" /></div>
+
+          <div class="zbg"><ul>
+
+  <li>教育部直属的全国重点大学</li>
+
+  <li>被社会誉为"工程师的摇篮"</li></ul></div>
+
+  </div>
+
+       <p class="b-zixi"><strong>其他优势专业：</strong></p>
+
+       <p class="b-zixi">人力资源管理、工程管理、物流工程与管理、行政管理、工商管理</p>
+
+			<p><a href="tencent://message/?uin=138373701&Site=依米书院&Menu=yes"><img src="/images/road_09.jpg" width="206" height="44" class="imwo" /></a></p>
+
+			</div>
+
+			 </div>
+
+		 </div> 
+
+		  <div id="bensh">
+
+		 	<div class="ben"><img src="/images/bb.jpg" alt="本地招生名校"></div>
+
+           <div class="xia">
+
+           <div class="xia-l">
+
+            <div class="xen"><img src="/images/x1.jpg" width="123" height="33" /></div>
+
+				<p >宁波大学是一所在改革开放中成长起来的综合性大学，是浙江省、教育部和宁波市共建高校。1986年由世界船王包玉刚先生捐资创立，邓小平同志题写校名。</p>
+
+      <div  class="anyo">
+
+        <div  class="an">
+
+			<span><strong>优势专业：</strong></span><br>工商管理、会计学、学前教育、国际经济与贸易、金融学、市场营销、物流管理、土木工程
+
+			</div>
+
+         <div class="antu">
+
+           <h3><a href="tencent://message/?uin=576669988&Site=依米书院&Menu=yes"><img src="/images/road_14.jpg" width="175" height="40" /></a></h3>
+
+       </div>
+
+            </div></div>
+
+           <div class="xia-r"><img src="/images/ro_24.jpg" alt="厦门大学"></div></div> 
+
+     <div class="san-cen">
+
+      <div class="san">
+
+        <div class="san-t"><img src="/images/r_36.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>对外汉语、英语、汉语言文学、金融学、会计学、经济管理、国际经济与贸易、计算机科学与技术</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=576669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+      <div class="san1">
+
+        <div class="san-t"><img src="/images/r-05.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>工商管理、会计学、电子商务、信息管理与信息技术、国际经济与贸易、融学、英语（英语教育/翻译英语/财经英语/商务英语）</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=576669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+      <div class="san1">
+
+        <div class="san-t"><img src="/images/r35.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>行政管理、土木工程、物流管理、电子商务、电气工程自动化、计算机科学与技术、电子商务、国际经济与贸易</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=576669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+     </div>
+
+     <div class="ben1"><img src="/images/vvv.jpg" width="225" height="46" /> </div>
+
+     <div class="xia">
+
+           <div class="xia-l">
+
+            <div class="xen"><img src="/images/x2.jpg" width="123" height="33" /></div>
+
+				<p >宁波大学是一所在改革开放中成长起来的综合性大学，是浙江省、教育部和宁波市共建高校。1986年由世界船王包玉刚先生捐资创立，邓小平同志题写校名。</p>
+
+      <div  class="anyo">
+
+        <div  class="an">
+
+			<span><strong>优势专业：</strong></span><br>工商管理、会计学、学前教育、国际经济与贸易、金融学、市场营销、物流管理、土木工程
+
+			</div>
+
+         <div class="antu">
+
+           <h3><a href="tencent://message/?uin=756669988&Site=依米书院&Menu=yes"><img src="/images/road_14.jpg" width="175" height="40" /></a></h3>
+
+       </div>
+
+            </div></div>
+
+            
+
+
+
+
+
+           <div class="xia-r"><img src="/images/ro_24.jpg" alt="厦门大学"></div></div>
+
+     <div class="san-cen">
+
+      <div class="san">
+
+        <div class="san-t"><img src="/images/r_36.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>对外汉语、英语、汉语言文学、金融学、会计学、经济管理、国际经济与贸易、计算机科学与技术</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=756669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+      <div class="san1">
+
+        <div class="san-t"><img src="/images/r-05.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>工商管理、会计学、电子商务、信息管理与信息技术、国际经济与贸易、融学、英语（英语教育/翻译英语/财经英语/商务英语）</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=756669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+      <div class="san1">
+
+        <div class="san-t"><img src="/images/r35.jpg" /></div>
+
+        <div class="san-c">
+
+          <p><strong>优势专业:</strong></p>
+
+          <p>行政管理、土木工程、物流管理、电子商务、电气工程自动化、计算机科学与技术、电子商务、国际经济与贸易</p>
+
+        </p></div>
+
+        <div class="san-b"><a href="tencent://message/?uin=756669988&Site=依米书院&Menu=yes"><img src="/images/road-05.jpg" /></a></div>
+
+      </div>
+
+     </div>
+
+		 <!--[if !IE]>本地招生名校end<![endif]-->
+
+		 <!--[if !IE]>网络大学预报名申请表start<![endif]-->
+
+		 <div class="web-f">
+
+          <div class="web-c">
+
+		 	<p class="webtxt"><span class="Color_0">在线咨询表</p>
+
+			<p class="txtxt">如果您希望进一步了解网络学历教育的相关信息与具体的学习细节，请仔细填写以下表格，我们的咨询教师将在您指定的时间拨打您的电话并提供咨询服务。</p>
+
+			<div class="webce">
+
+            <table width="729" border="0" align="left" >
+
+			  <tr>
+
+			    <td width="49" height="44">姓 名</td>
+
+			    <td width="319"><form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka" id="tdd" />
+
+			      </form></td>
+
+			    <td width="64"><form id="form3" name="form3" method="post" action="">
+
+			      <p>
+
+			        <label>
+
+			          <input type="radio" name="RadioGroup1" value="男士" id="RadioGroup1_0" />
+
+			          男士</label>
+
+		          </p>
+
+			      </form></td>
+
+			    <td width="60"><form id="form3" name="form3" method="post" action="">
+
+			      <p>
+
+			        <label>
+
+			          <input type="radio" name="RadioGroup1" value="女士" id="RadioGroup1_0" />
+
+			          女士</label>
+
+		          </p>
+
+			      </form></td>
+
+			    <td width="215">请填写您的姓名，并选择称谓</td>
+
+		      </tr>
+
+			  <tr>
+
+			    <td height="41">QQ</td>
+
+			    <td colspan="4"><form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka" id="tdd" />
+
+		        </form>
+
+        <div class="bd">邮 箱</div>
+
+               <form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka2" id="tdd" />
+
+		        </form></td>
+
+                
+
+		      </tr>
+
+              <tr>
+
+			    <td height="43">报读学校</td>
+
+			    <td colspan="4"><form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka" id="tdd" />
+
+		        </form>
+
+        <div class="bd">报读专业</div>
+
+               <form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka2" id="tdd" />
+
+		        </form></td>
+
+		      </tr>
+
+			  <tr>
+
+			    <td>联系方式</td>
+
+			    <td><form id="form2" name="form2" method="post" action="">
+
+			      <label for="tdd"></label>
+
+			      <input name="tdd" type="text" class="txtka" id="tdd" />
+
+			      </form></td>
+
+			    <td> </td>
+
+			    <td> </td>
+
+			    <td>请填写您的手机号码</td>
+
+		      </tr>
+
+			  <tr>
+
+			    <td colspan="5"><form id="form4" name="form4" method="post" action="">
+
+      <input name="button" type="submit" class="submitBtn" id="button" value="" />
+
+    </form>
+
+
+
+</td>
+
+		      </tr>
+
+			  <tr>
+
+			    <td> </td>
+
+			    <td colspan="3">声明我们尊重并将严格保密您的个人隐私信息，承诺绝不出租或出售</td>
+
+			    <td> </td>
+
+		      </tr>
+
+		    </table></div>
+
+			<ul class="webSch">
+
+			 <li class="baname">
+
+             <p><strong>报名条件：</strong></p>
+
+             <p>高中起点专科考生须持有国民教育系列高中<p></p>(含中专中职、技校)或高中以上毕业证书。</p>
+
+             <p>专科起点本科考生须持有国民教育系列大专<p></p>(含高职)或大专以上毕业证书。</p></li>
+
+	<li class="baname1">
+
+	 <p>报名材料</p>
+
+	 <p >身份证、毕业证原件及复印件各一份，蓝底彩色1、2寸照片各6张</p>
+
+	 <p>电子版照片一份</p></li>
+
+		<li class="baname2">
+
+			<p>报名流程</p>
+
+		<div class="c">
+
+		<div class="one">
+
+		<p class="onet" >1</p>
+
+		<p class="one-txt" >选择院校专业</p></div>
+
+		<div class="one">
+
+		<p class="onet" >2</p>
+
+		<p class="one-txt">网上预报名</p>
+
+		</div>  
+
+		<div class="one">
+
+		<p class="onet" >3</p>
+
+		<p class="one-txt">参加入学测试</p>
+
+		</div>
+
+		<div class="one">
+
+		<p class="onet" >4</p>
+
+		<p class="one-txt">院校录取</p>
+
+			  </div>
+
+			</div>
+
+			  </li>
+
+			</ul>
+
+		 </div></div>
+
+		 
+
+		 <div id="gfang">
+
+          <div class="gfang-l"><img src="/images/road_21.jpg" /></div>
+
+          <div class="gfang-r">
+
+            <ul><li><img src="/Record/img5.jpg" width="265" height="185" /></li>
+
+             <li><img src="/Record/img6.jpg" width="265" height="185" /></li>
+
+             <li><img src="/Record/img7.jpg" width="265" height="185" /></li>
+
+            </ul>
+
+            <div class="fanyda">
+
+            <span>教育部批文<img src="/Record/magnifying.jpg" width="17" height="17" /></span>
+
+            <span>教育部批文><img src="/Record/magnifying.jpg" width="17" height="17" /></span>
+
+            <span>教育部批文<img src="/Record/magnifying.jpg" width="17" height="17" /></span></div>
+
+          </div>
+
+         </div>
+
+		 
+
+		 <div id="xuexi"><img src="/images/road_29.jpg" alt="学习中心在您身边"></p>
+
+		 <ul class="xue-he">
+
+		 	<li><span>金华</span>地址：金华市亚峰路61号</li>
+
+			<li> <span>杭州</span>地址：萧山区萧绍路1107号国信证券大楼6楼</li>
+
+			<li><span>杭州二</span>地址：萧山区瓜沥东灵北路68号航坞文化创意园3号楼</li>
+
+			<li><span>杭州三</span>地址：萧山区临浦镇东藩南路178号（镇政府对面）</li>
+
+			<li ><span>宁波</span>地址：慈溪市浒山镇三北西大街28号波斯曼大酒店二楼</li>
+
+			<li><span>宁波二</span>地址：宁波市江北区环城北路西段709弄（宁波大学成教院内）</li>
+
+			<li><span>温州</span>地址：乐清市虹桥镇飞虹路银虹大厦3楼</li>
+
+			<li><span>温州二</span>地址：乐清市乐成在双雁路162号</li>
+
+			<li><span>温州三</span>地址：乐清市清江镇渡头村农村合作银行旁边</li>
+
+			<li><span>绍兴</span>地址：绍兴市解放南路245号三楼</li>
+
+			<li><span>绍兴二</span>地址：绍兴县柯桥蓝天市心广场1栋4楼（富丽华大酒店旁）</li>
+
+			<li><span>绍兴三</span>地址：绍兴县钱陶公路飞华大厦二楼</li>			
+
+			<li><span>嘉兴</span>地址：嘉兴市洪波路206号</li>
+
+			<li><span>嘉兴二</span>地址：嘉兴市中山东路工人文化宫内</li>
+
+			<li><span>丽水</span>地址：丽水市紫金路471号二楼</li>
+
+			<li><span>台州</span>地址：温岭市三星大道中华路路口振兴大厦三楼 </li>
+
+		 </ul>
+
+	</div></div>
+
+</div>
+
+
+
+<DIV id="footbg">
+
+  <CENTER>
+
+<DIV class="foot">
+
+<DIV class="left"></DIV>
+
+<DIV class="right">ADD:{dede:global.cfg_add/}<br />
+
+TEL:{dede:global.cfg_tel/} FAX:{dede:global.cfg_fax/} P.C:{dede:global.cfg_pc/} <br />
+
+website:{dede:global.cfg_basehost/}  E-mail:{dede:global.cfg_email/} <br />
+
+Copyright 2013-2014 jxyimi.com 版权所有 {dede:global.cfg_beian/}<BR>
+
+</DIV>
+
+ </DIV></CENTER></DIV>
+<script language="javascript" src="http://code.54kefu.net/kefu/js/56/510256.js" charset="utf-8"></script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ac1e7c321b7d5810c37431c39eb8908' type='text/javascript'%3E%3C/script%3E")) </script>
+
+</body></html>

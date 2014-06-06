@@ -1,0 +1,1 @@
+<a href='[field:typelink /]'>¸ü¶à&gt;&gt;</a>

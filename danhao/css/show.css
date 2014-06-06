@@ -1,0 +1,90 @@
+﻿.search {
+border: 1px solid #d7e3ea;
+padding: 8px 10px;
+margin-bottom: 10px;
+background: #f6fafd;
+zoom: 1;
+}
+#danhao table{
+ background-color:#fff;
+ border:none;
+ font:12px arial;
+ text-align:left;
+}
+#danhao table caption{
+ font-size:24px;
+ border-bottom:2px solid #b3de94;
+}
+
+<--接下来设置单元格的样式，代码如下：-->
+
+#danhao table,td,th{
+
+ margin:0;
+ padding:0;
+ vertical-align:middle;
+ 
+}
+#danhao tbody td,tbody th{
+ 
+ border-bottom:1px solid #b3de94;
+ border-top:1px solid #fff;
+ padding:2px;
+}
+.trbense{
+background-color:#dfc;
+ font-weight:bold;
+ padding:4px 8px 6px 9px;
+ text-align:center;
+}
+.trbense1{
+ background-color:#red; /* 动态变色 */
+ font-weight:bold;
+ padding:4px 8px 6px 9px;
+ text-align:center;
+}
+#danhao thead th{
+ font-size:14px;
+ font-weight:bold;
+ line-height:19px;
+ padding:0 8px 2px;
+ text-align:center;
+}
+
+#danhao col.price{
+ text-align:right;
+}
+/* showDialog */
+#SD_HideSelect {position:fixed;top:0px;left:0px;z-index:999;width:100%;height:100%;background:#FFFFFF;border:none;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;}
+* html #SD_HideSelect {position:absolute;height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');}
+#SD_overlay {position:fixed;top:0px;left:0px;z-index:1000;width:100%;height:100%;}
+* html #SD_overlay {position:absolute;height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');}
+.SD_overlayBG {background:#000000;filter:alpha(opacity=50);-moz-opacity:0.50;opacity:0.50;}
+.SD_overlayBG2 {background:#FFFFFF;filter:alpha(opacity=20);-moz-opacity:0.20;opacity:0.20;}
+.SD_bg {background:#333333;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;width:9px;height:9px;overflow:hidden;}
+#SD_window {position:absolute;top:0px;left:0px;z-index:1000;overflow:hidden;display:none;}
+#SD_container {position:relative;z-index:1005;background:#FFFFFF;border:1px solid #888888;float:left;}
+#SD_container h3 {height:30px;line-height:30px;background:#F6F6F6;border-bottom:1px solid #CDCDCD;text-indent:10px;color:#336699;font-size:14px;font-weight:bold;cursor:move;}
+#SD_body {padding:15px;white-space:normal;}
+#SD_body, #SD_body div, #SD_body p, #SD_body td {color:#000000;}
+#SD_button {padding:10px 0px;background:#F6F6F6;border-top:1px solid #CDCDCD;text-align:right;display:none;}
+#SD_button a {margin-right:10px;padding:6px 10px 4px;background:#005EAC;border-width:1px;border-style:solid;border-color:#D8DFEA #0E1F5B #0E1F5B #D8DFEA;white-space:nowrap;display:inline-block;color:#FFFFFF;font-size:14px;text-align:center;cursor:pointer;}
+#SD_button a:hover {text-decoration:none;}
+#SD_close {position:absolute;top:6px;right:10px;z-index:1005;width:17px;height:17px;border:none;background:url(../jpg/sd_close.png) no-repeat 0px 0px;display:none;}
+#SD_close:hover {background-position:0px -17px;}
+
+
+/*buylist*/
+.buylistdanhao{
+font-size:13px;
+background:#dfc;
+text-align:center;
+border-spacing:0px
+}
+.buylistdanhao tr:hover {background:#CCCC9A;}
+
+
+/*弹层样式*/
+#layer{background-color:#f1f1f1;border:solid 1px #ccc;position:absolute;display:none;width:450px;height:300px;padding:5px;font-size:12px;overflow:auto;}
+#layer_close {position:absolute;top:6px;right:10px;z-index:1005;width:17px;height:17px;border:none;background:url(../jpg/sd_close.png) no-repeat 0px 0px;display:none;}
+#layer_close:hover {background-position:0px -17px;}

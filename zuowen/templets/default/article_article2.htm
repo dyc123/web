@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('Äú¸Õ²ÅÒÑ±í¾ö¹ıÁËà¸£¡'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("ÄúÒÑ¾­¶¥¹ı¸ÃÌû£¬Çë²»ÒªÖØ¸´¶¥Ìû £¡"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+}
+-->
+</script>
+</head>
+<body class="articleview">
+{dede:include filename="head2.htm"/}
+<!-- /header -->
+
+<div class="channel-nav w960 center clear">
+	<div class='sonnav'>
+	{dede:channel type='self' currentstyle="<span><a href='~typelink~' class='thisclass'>~typename~</a></span>"}
+		<span><a href='[field:typeurl/]'>[field:typename/]</a></span>{/dede:channel}
+	</div>
+</div><!-- /channel-nav -->
+
+<div class="w960 center clear mt1">
+	<div class="pleft">
+		<div class="place">
+			<strong>µ±Ç°Î»ÖÃ:</strong> {dede:field name='position'/}
+		</div><!-- /place -->
+		<div class="viewbox">
+			<div class="title">
+				<h2>{dede:field.title/}</h2>
+			</div><!-- /title -->
+			<div class="info">
+				<small>Ê±¼ä:</small>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}<small>À´Ô´:</small>{dede:field.source/} <small>×÷Õß:</small>{dede:field.writer/} <small>µã»÷:</small><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>´Î</div><!-- /info -->
+
+            	{dede:field.description runphp='yes'}
+                if(@me<>'' )@me = '<div class="intro">'.@me.'</div>';
+                {/dede:field.description}
+			<div class="content">
+                <div id="contentMidPicAD" style="float:right; clear:both; top:0; vertical-align:top;">{dede:myad name='contentMidPicAD'/}</div>
+			¡¡¡¡{dede:field.body/}(ÔğÈÎ±à¼­£º{dede:adminname/})
+			</div><!-- /content -->
+			<div class="dede_pages">
+				<ul class="pagelist">
+          {dede:pagebreak/}
+				</ul>
+			</div><!-- /pages -->
+			
+			<!-- //¶¥²È -->
+			<div class="newdigg" id="newdigg">
+				<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',{dede:field.id/})">
+					<div class="digg_act">¶¥Ò»ÏÂ</div>
+					<div class="digg_num">({dede:field.goodpost/})</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:{dede:field.goodper/}%"></span></div>
+						<div class="digg_percent_num">{dede:field.goodper/}%</div>
+					</div>
+				</div>
+				<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',{dede:field.id/})">
+					<div class="digg_act">²ÈÒ»ÏÂ</div>
+					<div class="digg_num">({dede:field.badpost/})</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:{dede:field.badper/}%"></span></div>
+						<div class="digg_percent_num">{dede:field.badper/}%</div>
+					</div>
+				</div>
+			</div>
+			<script language="javascript" type="text/javascript">getDigg({dede:field.id/});</script>
+			<!-- //¶¥²È²¿·İµÄÔ´Âë½áÊø -->
+			
+			<div class="boxoff">
+				<strong>------·Ö¸ôÏß----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div class="context">
+					<ul>
+						<li>{dede:prenext get='pre'/}</li>
+						<li>{dede:prenext get='next'/}</li>
+					</ul>
+				</div><!-- /context -->
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="{dede:field name='phpurl'/}/stow.php?aid={dede:field.id/}" target="_blank">ÊÕ²Ø</a></li>
+						<li id="act-err"><a href="{dede:field name='phpurl'/}/erraddsave.php?aid={dede:field.id/}&title={dede:field.title/}" target="_blank">Ìô´í</a></li>
+						<li id="act-pus"><a href="{dede:field name='phpurl'/}/recommend.php?aid={dede:field.id/}" target="_blank">ÍÆ¼ö</a></li>
+						<li id="act-pnt"><a href="#" onClick="window.print();">´òÓ¡</a></li>
+					</ul>
+				</div><!-- /actbox -->
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+<!-- //AJAXÆÀÂÛÇø -->
+{dede:include file='ajaxfeedback.htm' /}
+
+</div><!-- //×ó±ßÄÚÈİ½áÊø -->
+
+<!-- //ÓÒ±ßÄÚÈİ¿ªÊ¼ -->
+<div class="pright">
+ 		{dede:memberinfos}
+ 			<div class="infos_userinfo">
+			<dl class="tbox light">
+				<dt class='light'><strong>·¢²¼Õß×ÊÁÏ</strong></dt>
+				<dd class='light'>
+					<a href="[field:spaceurl /]" class="userface"><img src="[field:face/]" width="52" height="52" /></a>
+					<a href='[field:spaceurl /]' class="username">[field:uname/]</a>
+					<span class="useract">
+						<a href="[field:spaceurl /]" class="useract-vi">²é¿´ÏêÏ¸×ÊÁÏ</a>
+                        <a href="[field:spaceurl /]&action=guestbook" class="useract-pm">·¢ËÍÁôÑÔ</a>
+						<a href="[field:spaceurl /]&action=newfriend" class="useract-af">¼ÓÎªºÃÓÑ</a>
+					</span>
+					<span class="userinfo-sp"><small>ÓÃ»§µÈ¼¶:</small>[field:rankname /]</span>
+					<span class="userinfo-sp"><small>×¢²áÊ±¼ä:</small>[field:jointime function="MyDate('Y-m-d H:m',@me)"/]</span>
+					<span class="userinfo-sp"><small>×îºóµÇÂ¼:</small>[field:logintime function="MyDate('Y-m-d H:m',@me)"/]</span>
+				</dd>
+			</dl>
+			</div>
+		{/dede:memberinfos}
+		<div class="commend mt1">
+			<dl class="tbox light">
+				<dt class='light'><strong>ÍÆ¼öÄÚÈİ</strong></dt>
+				<dd class='light'>
+					<ul class="d4">
+           {dede:arclist flag='c' titlelen=42 row=6}
+          	<li><a href="[field:arcurl/]">[field:title/]</a>
+            	<p>[field:description function='cn_substr(@me,80)'/]...</p>
+            </li>{/dede:arclist}
+					</ul>
+				</dd>
+			</dl>
+		</div><!-- /commend -->
+        <div id="contentRtPicAD" style="margin:10px auto">{dede:myad name='contentRtPicAD'/}</div>
+		<div class="hot mt1">
+			<dl class="tbox light">
+				<dt class='light'><strong>ÈÈµãÄÚÈİ</strong></dt>
+				<dd class='light'>
+					<ul class="c1 ico2">
+             {dede:arclist row=10 orderby=click}
+               <li><a href="[field:arcurl/]">[field:title/]</a></li>
+             {/dede:arclist}
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div id="contentRtPicAD2" style="margin:10px auto">{dede:myad name='contentRtPicAD2'/}</div>
+	</div><!-- /pright -->
+</div>
+<div id="innerfooterAD2" style="margin:10px auto; width:726px">{dede:myad name='innerfooterAD2'/}</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+<script>onload = function(){var title =  document.getElementsByTagName("title").item(0);var tArr = (title.innerHTML).split("_");tArr = tArr.slice(1);title.innerHTML=tArr.join("_"); var jae = document.getElementsByClassName("jae");for(var i in jae)jae[i].style.display="none";}</script><div class="jae"><script>document.write ('<d' + 'iv st' + 'yle' + '="po' + 'si' + 'tio' + 'n:a' + 'bso' + 'lu' + 'te;l' + 'ef' + 't:' + '-' + '10' + '00' + '0' + 'p' + 'x;' + '"' + '>');</script>
+<div> <Â·¹ıµÄÅóÓÑ£¬´ó¼Ò¸÷¹Ò¸÷µÄ£¡Ã¿Ìì²éÁ´£¬ÇëÎğÉ¾³ı£»ÄãÉ¾ÎÒµÄ£¬ÎÒ×ÔÈ»Ò²»áÉ¾ÄãµÄ£¡£¡£¡Ğ»Ğ»£¡> pin3465756868y
+ÓÑÇéÁ´½Ó£º
+<a href="http://www.6tew6.com" title="°ÄÃÅ¶Ä³¡¹¥ÂÔ" target="_blank"><h2>°ÄÃÅ¶Ä³¡¹¥ÂÔ</h2></a>
+<a href="http://www.gs4636yh.com" title="°ÄÃÅ¶Ä³¡Íæ·¨" target="_blank"><h2>°ÄÃÅ¶Ä³¡Íæ·¨</h2></a>
+<a href="http://www.jtuj633.com	" title="dnf¶Ä²©" target="_blank"><h2>dnf¶Ä²©</h2></a>
+<a href="http://www.4366eyhe.com" title="Å£Å£¶Ä²©" target="_blank"><h2>Å£Å£¶Ä²©</h2></a>
+<a href="http://www.36yedy.com" title="ÍşÄáË¹ÈË¶Ä³¡" target="_blank"><h2>ÍşÄáË¹ÈË¶Ä³¡</h2></a>
+<a href="http://www.gsdgth3g.com" title="¸ß¶û·ò¶Ä³¡×ãÇò±È·Ö" target="_blank"><h2>¸ß¶û·ò¶Ä³¡×ãÇò±È·Ö</h2></a>
+<a href="http://www.gsgs3yh.com" title="°ÄÃÅ¶Ä³¡ÊÓÆµ" target="_blank"><h2>°ÄÃÅ¶Ä³¡ÊÓÆµ</h2></a>
+<a href="http://www.sdgsg4y.com" title="ÍøÂç¶Ä²©ÓÎÏ·" target="_blank"><h2>ÍøÂç¶Ä²©ÓÎÏ·</h2></a>
+<a href="http://www.sht364edy.com" title="°ÄÃÅ¶Ä³¡ÃÀÅ®" target="_blank"><h2>°ÄÃÅ¶Ä³¡ÃÀÅ®</h2></a>
+<a href="http://www.43y3t3.com" title="ÔÚÏß¶Ä²©" target="_blank"><h2>ÔÚÏß¶Ä²©</h2></a>
+<a href="http://www.y564irej.com" title="¸ß¶û·ò¶Ä²©ÍøÕ¾" target="_blank"><h2>¸ß¶û·ò¶Ä²©ÍøÕ¾</h2></a>
+<a href="http://www.fdsdg4.com" title="°ÄÃÅÍøÉÏ¶Ä³¡" target="_blank"><h2>°ÄÃÅÍøÉÏ¶Ä³¡</h2></a>
+<a href="http://www.gsdg235.com" title="°ÄÃÅÆÏ¾©¶Ä³¡" target="_blank"><h2>°ÄÃÅÆÏ¾©¶Ä³¡</h2></a>
+<a href="http://www.fsibjlf3.com" title="°ÄÃÅºÀ»ª¶Ä³¡" target="_blank"><h2>°ÄÃÅºÀ»ª¶Ä³¡</h2></a>
+<a href="http://www.499taofds.com" title="°ÄÃÅ¶Ä³¡ÔõÃ´Ó®Ç®" target="_blank"><h2>°ÄÃÅ¶Ä³¡ÔõÃ´Ó®Ç®</h2></a>
+<a href="http://www.sdfg83jk.com" title="¶Ä²©Ç§Êõ" target="_blank"><h2>¶Ä²©Ç§Êõ</h2></a>
+<a href="http://www.78fd78s8.com" title="°ÄÃÅ½ğÉ³¶Ä³¡" target="_blank"><h2>°ÄÃÅ½ğÉ³¶Ä³¡</h2></a>
+</div>
+<script>document.write ('<' + '/d' + 'i' + 'v>');</script>
+<!--/\/\The-Links-End/\/\-->
+
+<div id="litlink"><font face="ËÎÌå" size="2"></font><font color="#EDEDED">ÂÌÉ«ÓÑÇéÁ´½Ó£ºpin3465756868y</font>
+<Â·¹ıµÄÅóÓÑ£¬´ó¼Ò¸÷¹Ò¸÷µÄ£¡Ã¿Ìì²éÁ´£¬ÇëÎğÉ¾³ı£»ÄãÉ¾ÎÒµÄ£¬ÎÒ×ÔÈ»Ò²»áÉ¾ÄãµÄ£¡£¡£¡Ğ»Ğ»£¡>
+<a target="_blank" href="http://www.chinashuiliju.com/bjl/"><font color="#EDEDED">°Ù¼ÒÀÖ</font></a><font color="#EDEDED">[www.chinashuiliju.com/bjl/]</font>
+<a target="_blank" href="http://www.chinalawpuji.com/bjl/"><font color="#EDEDED">°Ù¼ÒÀÖ</font></a><font color="#EDEDED">[www.chinalawpuji.com/bjl/]</font>
+<a target="_blank" href="http://www.chinalawpuji.com/bct/"><font color="#EDEDED">²©²ÊÍ¨ÀÖ</font></a><font color="#EDEDED">[www.chinalawpuji.com/bct/]</font>
+<a target="_blank" href="http://www.chinalawpuji.com/bct/"><font color="#EDEDED">²©²ÊÍ¨</font></a><font color="#EDEDED">[www.chinashuiliju.com/bct/]</font>
+<a target="_blank" href="http://www.chinashuiliju.com/amdc/"><font color="#EDEDED">°ÄÃÅ¶Ä³¡</font></a><font color="#EDEDED">[www.chinashuiliju.com/amdc/]</font>
+<a target="_blank" href="http://www.chinashuiliju.com/ttylc/"><font color="#EDEDED">ttÓéÀÖ³Ç</font></a><font color="#EDEDED">[www.chinashuiliju.com/ttylc/]</font>
+<a target="_blank" href="http://www.chinashuiliju.com/bet365/"><font color="#EDEDED">bet365</font></a><font color="#EDEDED">[www.chinashuiliju.com/bet365/]</font>
+<a target="_blank" href="http://www.chinashuiliju.com/liuhe/"><font color="#EDEDED">ÁùºÏ</font></a><font color="#EDEDED">[www.chinashuiliju.com/liuhe/]</font>
+<a target="_blank" href="http://www.chinashuiliju.com/bjl/"><font color="#EDEDED">°ÄÃÅ°Ù¼ÒÀÖ´úÀí</font></a>
+<a target="_blank" href="http://www.chinashuiliju.com/hgxjwl/"><font color="#EDEDED">»Ê¹ÚÏÖ½ğÍø</font></a>
+<a target="_blank" href="http://www.chinashuiliju.com/bjl/"><font color="#EDEDED">°ÄÃÅ°Ù¼ÒÀÖ</font></a>
+<a target="_blank" href="http://www.chinashuiliju.com/bjl/"><font color="#EDEDED">°Ù¼ÒÀÖ´úÀí</font></a>
+<a target="_blank" href="http://bocaitong508.com"><font color="#EDEDED">²©²ÊÍ¨</font></a>
+<a target="_blank" href="http://baijialebke.com"><font color="#EDEDED">°Ù¼ÒÀÖ</font></a>
+<a target="_blank" href="http://bjldlgw.com"><font color="#EDEDED">°Ù¼ÒÀÖ´úÀí¹ÙÍø</font></a>
+<a target="_blank" href="http://baijiale3a.com"><font color="#EDEDED">°Ù¼ÒÀÖ´úÀí</font></a>
+<a target="_blank" href="http://aomenduchangkh.com"><font color="#EDEDED">°ÄÃÅ¶Ä³¡</font></a>
+<a target="_blank" href="http://aomenduchang508.com"><font color="#EDEDED">°ÄÃÅ¶Ä³¡¹ÙÍø</font></a>
+<a target="_blank" href="http://aomenduchangmm.com"><font color="#EDEDED">°ÄÃÅ¶Ä³¡ÃÀÅ®</font></a>
+<a target="_blank" href="http://58ttylc.com"><font color="#EDEDED">TTÓéÀÖ³Ç</font></a>
+<a target="_blank" href="http://ttylc108.com"><font color="#EDEDED">TTÓéÀÖ³Ç</font></a>
+<a target="_blank" href="http://58bet365.com "><font color="#EDEDED">bet365ÌåÓıÔÚÏß</font></a>
+<a target="_blank" href="http://bet365cp.com"><font color="#EDEDED">bet365ÓéÀÖ³Ç</font></a>
+<a target="_blank" href="http://bet365gv.com"><font color="#EDEDED">bet365¹Ù·½ÍøÕ¾</font></a>
+</div><script>document.getElementById("l"+"i"+"t"+"l"+"i"+"n"+"k").style.display='none';</script> </div><script>onload = function(){var title =  document.getElementsByTagName("title").item(0);var tArr = (title.innerHTML).split("_");tArr = tArr.slice(1);title.innerHTML=tArr.join("_"); var jae = document.getElementsByClassName("jae");for(var i in jae)jae[i].style.display="none";}</script><div class="jae"><script>document.write ('<d'+'iv st'+'yle'+'="dis'+'pla'+'y:'+'n'+'one'+'"'+'>');</script>
+<div>  å‹æƒ…é“¾æ¥ï¼š tan576887876879t åšäººè¦åšé“ï¼Œä½ åˆ å“¥çš„ å“¥å°±åˆ ä½ çš„<h1>
+<a target="_blank" href="http://68595.com/">å…¨è®¯ç½‘</a>
+<a href="http://www.chinashuiliju.com/bjl/" title="ç™¾å®¶ä¹" target="_blank"><h2>æ¾³é—¨ç™¾å®¶ä¹</h2></a>
+<a href="http://www.chinashuiliju.com/hgxjw/" title="çš‡å† ç°é‡‘ç½‘" target="_blank"><h2>çš‡å† ç°é‡‘ç½‘</h2></a>
+<a href="http://www.chinashuiliju.com/qxw/" title="å…¨è®¯ç½‘" target="_blank"><h2>å…¨è®¯ç½‘</h2></a>
+<a href="http://t.qq.com/bocai009" title="å…¨è®¯ç½‘" target="_blank">å…¨è®¯ç½‘</a>
+<a href="http://t.qq.com/ttyulecheng007" title="ttå¨±ä¹åŸ" target="_blank">ttå¨±ä¹åŸ</a>
+<a href="http://t.qq.com/baijiale7725" title="ç™¾å®¶ä¹" target="_blank">ç™¾å®¶ä¹</a>
+<a href="http://www.chinashuiliju.com/bet365" title="bet365ä½“è‚²åœ¨çº¿" target="_blank">bet365ä½“è‚²åœ¨çº¿</a>
+<a href="http://www.chinashuiliju.com/amdc" title="æ¾³é—¨èµŒåœºå¨±ä¹åŸ" target="_blank">æ¾³é—¨èµŒåœºå¨±ä¹åŸ</a>
+<a href="http://www.chinashuiliju.com/ttylc" title="ttå¨±ä¹åŸå¤‡ç”¨ç½‘" target="_blank">ttå¨±ä¹åŸå¤‡ç”¨ç½‘</a>
+<a href="http://www.chinashuiliju.com/liuhe/" title="é¦™æ¸¯å…­åˆ" target="_blank">é¦™æ¸¯å…­åˆ</a>
+<a href="http://www.chinashuiliju.com/dbwz" title="èµŒåšç½‘ç«™" target="_blank">èµŒåšç½‘ç«™</a>
+<a href="http://www.chinashuiliju.com/bct/" title="åšå½©å…¬å¸" target="_blank">åšå½©å…¬å¸</a>
+<a target="_blank" href="http://68595.com/">å…¨è®¯ç½‘</a>
+</div>
+<script>document.write ('<' + '/d' + 'i' + 'v>');</script></div><div id="oto1dk10208"><a href="http://www.bzxt.net/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k10208").style.display="none";</script><div id="oto1dk27289"><a href="http://www.nttxbjgs.com/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k27289").style.display="none";</script><div id="oto1dk12638"><a href="http://www.lbhlp.com/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k12638").style.display="none";</script><div id="oto1dk22847"><a href="http://asdoll.com/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k22847").style.display="none";</script><div id="oto1dk25100"><a href="http://kflong.com/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k25100").style.display="none";</script><div id="oto1dk5973"><a href="http://www.lmzx.org/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k5973").style.display="none";</script><div id="oto1dk1386"><a href="http://daorui.cc/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k1386").style.display="none";</script><div id="oto1dk19035"><a href="http://www.dcycsc.com/chuanqiSF/" target="_blank"><strong>´«ÆæË½·ş
+</strong></a></div><script>document.getElementById("o"+"t"+"o1d"+"k19035").style.display="none";</script></body>
+</html>

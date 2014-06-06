@@ -1,0 +1,101 @@
+﻿   <script type="text/javascript">
+    //保存一个密码用于校验
+    var _pass;
+    /**
+    *检查用户名   
+    */
+function Trim(zhi) { 
+    return zhi.replace(/(^\s*)|(\s*$)/g, ""); }
+    //---------------------------------------------------------------------------
+    function check_username(){
+     var username;
+     username = document.getElementById('username').value;
+     username =Trim(username);
+     if (username == "") {
+      document.getElementById('username_error').innerHTML = "请输入用户名";
+      } else {
+       if (/^\w{6,20}$/.test(username)) {
+        document.getElementById('username_error').innerHTML = "";
+        } else {
+        document.getElementById('username_error').innerHTML = "请输入6 ~ 20 字符【0-9】【a-z-A-Z】";
+        }
+     }
+    }
+    /**
+    *检查Email
+    */
+    //---------------------------------------------------------------------------
+    function check_email(){
+     var email;
+     email = document.getElementById('email').value;
+     email = Trim(email);
+     if (email == "") {
+      document.getElementById('email_error').innerHTML = "请输入Email";
+      } else {
+       if (/^[\w-]+[\.]*[\w-]+[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(email)) {
+        document.getElementById('email_error').innerHTML = "";
+        } else {
+        document.getElementById('email_error').innerHTML = "请输入有效的Email地址";
+        }      
+      }
+     }
+    /**
+    *检查密码
+    */
+    //---------------------------------------------------------------------------
+    function check_pass(){
+     var pass;
+     pass = document.getElementById('pass').value;
+     pass = Trim(pass);
+     _pass = pass;
+     if (pass == "") {
+      document.getElementById('pass_error').innerHTML = "请输入密码";
+      } else {
+       if (/[a-zA-Z0-9]{6,20}/.test(pass)) {
+        document.getElementById('pass_error').innerHTML = "";
+        } else {
+        document.getElementById('pass_error').innerHTML = "请输入6 ~ 20 字符【0-9】【a-z-A-Z】";
+        }      
+      }
+     }
+    /**
+    *检查rpass
+    */
+    //---------------------------------------------------------------------------
+    function check_rpass(){
+     var rpass;
+     rpass = document.getElementById('rpass').value;
+     rpass = Trim(rpass);
+     if (rpass == "") {
+      document.getElementById('rpass_error').innerHTML = "请输入确认密码";
+      } 
+     else if (rpass != _pass) {
+      document.getElementById('rpass_error').innerHTML = "密码不一致";
+      }
+     else {
+      document.getElementById('rpass_error').innerHTML = ""
+      }    
+     }
+    //---------------------------------------------------------------------------
+    function regist(){
+     var username_error=document.getElementById('username_error').innerHTML;
+     var pass_error=document.getElementById('pass_error').innerHTML;
+     var rpass_error=document.getElementById('rpass_error').innerHTML;
+     var email_error=document.getElementById('email_error').innerHTML;
+     var username=document.getElementById('username').value;
+     var pass=document.getElementById('pass').value;
+     var rpass=document.getElementById('rpass').value;
+     var email=document.getElementById('email').value;    
+     //判断错误信息全部为空并且文本框全部不为空
+     if ((username_error == "" && pass_error == "" && rpass_error == "" && email_error == "")&&(username != "" && pass != "" && rpass != "" && email != "")) {
+		registercheck();
+      } else {
+       alert ("注册信息填写错误，请仔细检查更正后再提交");     
+       }   
+     }       
+   </script>
+<span class="front_input">用户名:</span><input id="username" type="text" class="_input" onblur="check_username()" /><span id="username_error" class="after_input"></span><br/><br/>
+<span class="front_input">密码:</span><input id="pass" type="password" class="_input" onblur="check_pass()" /><span id="pass_error" class="after_input"></span><br/><br/>
+<span class="front_input">确认密码:</span><input id="rpass" type="password" class="_input" onblur="check_rpass()" /><span id="rpass_error" class="after_input"></span><br/><br/>
+<span class="front_input">邮箱:</span><input id="email" type="text" class="_input" onblur="check_email()" /><span id="email_error" class="after_input"></span><br/><br/>
+<div style="clear:both;margin-left:230px;margin-top:50px;"><button onclick="regist()"> 注册 </button></div>

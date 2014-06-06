@@ -1,0 +1,89 @@
+﻿<div  style="width:1000px;height:150px;"><div id="gonggao" style="width:700px;height:135px;float:left;border: solid 1px rgb(205, 14, 241);">	
+    暂无公告！
+	</div>
+<div>	
+		发货地址:
+		<select name="fa_province" id="fa_province" onchange="fagetCity();" onclick="deleteaa(1)">
+		 		  <option value="0">请选择省份</option>
+		  <option value="浙江">浙江</option>
+		  <option value="广东">广东</option>
+		  <option value="北京">北京</option>
+		  <option value="上海">上海</option>
+		  <option value="重庆">重庆</option>
+		  <option value="天津">天津</option>
+		  <option value="江苏">江苏</option>
+		  <option value="福建">福建</option>
+		  <option value="湖北">湖北</option>
+		  <option value="湖南">湖南</option>
+		  <option value="四川">四川</option>
+		  <option value="山东">山东</option>
+		  <option value="河南">河南</option>
+		  <option value="河北">河北</option>
+		  <option value="辽宁">辽宁</option>
+		  <option value="安徽">安徽</option>
+		  <option value="陕西">陕西</option>
+		  <option value="吉林">吉林</option>
+        </select>
+		<select name="fa_city" id="fa_city" onclick="deleteaa(1)">
+		 		  <option value="0">请选择城市</option>
+		</select><br/><br/>
+收货地址:
+<select name="shou_province" id="shou_province" onchange="shougetCity(2);" onclick="deleteaa(2)">
+		  <option value="0">请选择省份</option>
+		  <option value="安徽">安徽</option>
+		  <option value="澳门">澳门</option>
+		  <option value="北京">北京</option>
+		  <option value="福建">福建</option>
+		  <option value="甘肃">甘肃</option>
+		  <option value="广东">广东</option>
+		  <option value="广西">广西</option>
+		  <option value="贵州">贵州</option>
+		  <option value="海南">海南</option>
+		  <option value="河北">河北</option>
+		  <option value="河南">河南</option>
+		  <option value="黑龙江">黑龙江</option>
+		  <option value="湖北">湖北</option>
+		  <option value="湖南">湖南</option>
+		  <option value="吉林">吉林</option>
+		  <option value="江苏">江苏</option>
+		  <option value="江西">江西</option>
+		  <option value="辽宁">辽宁</option>
+		  <option value="内蒙古">内蒙古</option>
+		  <option value="宁夏">宁夏</option>
+		  <option value="青海">青海</option>
+		  <option value="山东">山东</option>
+		  <option value="山西">山西</option>
+		  <option value="陕西">陕西</option>
+		  <option value="上海">上海</option>
+		  <option value="四川">四川</option>
+		  <option value="台湾">台湾</option>
+		  <option value="天津">天津</option>
+		  <option value="西藏">西藏</option>
+		  <option value="香港">香港</option>
+		   <option value="新疆">新疆</option>
+		  <option value="云南">云南</option>
+		  <option value="浙江">浙江</option>
+		  <option value="重庆">重庆</option>
+		  
+        </select>
+		<select name="shou_city" id="shou_city" onclick="deleteaa(2)">
+				  <option value="0">请选择城市</option>
+</select><br/><br/>
+快递类型:
+<select name="kuaidileixing" id="kuaidileixing"  onclick="deleteaa(3)">
+				  <option value="0">默认全部</option>
+		  <option value="圆通">圆通</option>
+		  <option value="申通">申通</option>
+		  <option value="中通">中通</option>
+        </select><br/><br/>
+日期选择:<input type="text" name="it" id="txtDate" class="it date-pick" width="100"/>
+<input type="button" id="sbt" value="搜索"/>
+<br/><br/>
+</div>
+</div>
+<div id="danhao">
+<div class="search" style="color:red">提醒：18点之前刷的单子基本上都可以用当天单号，18点之后刷的请第二天发货<div id="pagecount" style="text-align:right"></div></div>
+<div id="showdata" style="margin: 0 auto;"></div>
+<div id="pagecount" style="text-align:right"></div>
+</div>
+</div>

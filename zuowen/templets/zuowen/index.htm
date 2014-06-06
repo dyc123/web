@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="/skins/2013/css.css" rel="stylesheet" type="text/css" />
+<link href="/skins/2013/main.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script language="javascript" src="/js/zuowen.js"></script>
+<base target="_blank">
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+ 
+<div class="mainn_zw">
+<div class="mainn_zwl">{dede:type typeid='1'}<a href='[field:typelink /]'></a>{/dede:type}</div>
+<div class="mainn_zwr">
+{dede:channel type='son' typeid='1'}
+<a href="[field:typelink/]">[field:typename/]</a> | 
+{/dede:channel} 
+</div>
+</div>
+<div class="wd960">
+<div class="main_zwli_l">
+<div class="main_zwli_lt">{dede:type typeid='1'}<a href='[field:typelink /]'>[field:typename/]</a>{/dede:type}</div>
+<div class="main_zwli_lil">
+{dede:channelartlist typeid='1'}
+<dl><dt>{dede:field name='typename'/}:</dt>
+<dd>
+{dede:channel type='son' noself='yes'}<a href="[field:typelink/]" >[field:typename/]</a>{/dede:channel}
+</dd>
+</dl>
+{/dede:channelartlist} 
+</div>
+</div>
+ 
+<div class="main_fourz">
+<div class="main_fourzt_wz">
+<div class="main_fourzt_one">最新{dede:type typeid='1'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' row='14' typeid=1 }
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+ 
+<div class="main_fourzt_wz mgt8">
+<div class="main_fourzt_one">优秀{dede:type typeid='1'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' typeid=1 row='14'  orderby='hot'}
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}</ul>
+</div>
+</div>
+ 
+<div class="main_threerzw">
+<div class="main_threert"><span class="fr hong">{dede:type typeid='1'}<a href='[field:typelink /]'>更多&gt;&gt;</a>{/dede:type}</span><span class="main_threert_kz">最新优秀作文</span></div>
+<div class="main_threerb">
+<dl>
+{dede:arclist titlelen='20' typeid=1 row='16' flag='c' }
+<dd><a class="cheng" href="[field:typeurl /]">[最新]</a> <a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></dd>
+{/dede:arclist}
+</dl>
+</div>
+</div>
+</div>
+<!--endmiann_two-->
+ 
+<div class="bd960">
+<script src='/plus/ad_js.php?aid=3' language='javascript'></script>
+
+</div>
+ 
+<!--miann_two-->
+<div class="mainn_zwtwo">
+<div class="mainn_zwltwo">{dede:type typeid='8'}<a href='[field:typelink /]'></a>{/dede:type}</div>
+<div class="mainn_zwr">
+{dede:channel type='son' typeid='8'}
+<a href="[field:typelink/]">[field:typename/]</a> | 
+{/dede:channel} 
+</div>
+</div>
+ 
+<div class="wd960">
+<div class="main_zwli_ltwo">
+<div class="main_zwli_lttwo">{dede:type typeid='8'}<a href='[field:typelink /]'>[field:typename/]</a>{/dede:type}</div>
+ 
+<div class="main_zwli_liltwo">
+{dede:channelartlist typeid='8' row=3}
+<dl><dt>{dede:field name='typename'/}:</dt>
+<dd>
+{dede:channel type='son' noself='yes'}<a href="[field:typelink/]" >[field:typename/]</a>{/dede:channel}
+</dd>
+</dl>
+{/dede:channelartlist} 
+ 
+<dl class="nopadding">
+<dt class="zengdt">{dede:type typeid='8'}<a href='[field:typelink /]'></a>{/dede:type}</dt>
+</dl>
+ 
+</div>
+</div>
+ 
+<div class="main_fourz">
+<div class="main_fourzt_wz">
+<div class="main_fourzt_one">最新{dede:type typeid='8'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+ 
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' typeid=8 row='14'}
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+ 
+<div class="main_fourzt_wz mgt8">
+<div class="main_fourzt_one">优秀{dede:type typeid='8'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' typeid=8 row='14' orderby='hot'}
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}</ul>
+</div>
+</div>
+ 
+<div class="main_threerzw">
+<div class="main_threert"><span class="fr hong">{dede:type typeid='8'}<a href='[field:typelink /]'>更多&gt;&gt;</a>{/dede:type}</span><span class="main_threert_kz">写人作文</span></div>
+ 
+<div class="main_threerb">
+<dl>
+{dede:arclist titlelen='20' typeid=8 row='16' flag='c' }
+<dd><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></dd>
+{/dede:arclist}
+</dl>
+ 
+</div>
+</div>
+</div>
+<!--endmiann_two-->
+ 
+<div class="bd960">
+<script src='/plus/ad_js.php?aid=4' language='javascript'></script>
+</div>
+ 
+<!--miann_two-->
+<div class="mainn_zwthree">
+<div class="mainn_zwlthree">{dede:type typeid='13'}<a href='[field:typelink /]'></a>{/dede:type}</div>
+<div class="mainn_zwr">
+{dede:channel type='son' typeid='13'}
+<a href="[field:typelink/]">[field:typename/]</a> | 
+{/dede:channel}
+</div>
+</div>
+ 
+<div class="wd960">
+<div class="main_zwli_lthree">
+<div class="main_zwli_ltthree">{dede:type typeid='13'}<a href='[field:typelink /]'>[field:typename/]</a>{/dede:type}</div>
+ 
+<div class="main_zwli_lilthree">
+{dede:channelartlist typeid='13' row=3}
+<dl><dt>{dede:field name='typename'/}:</dt>
+<dd>
+{dede:channel type='son' noself='yes'}<a href="[field:typelink/]" >[field:typename/]</a>{/dede:channel}
+</dd>
+</dl>
+{/dede:channelartlist} 
+ 
+<dl class="nopadding">
+<dt class="zengdt">{dede:type typeid='13'}<a href='[field:typelink /]'></a>{/dede:type}</dt>
+</dl>
+ 
+</div>
+</div>
+ 
+<div class="main_fourz">
+<div class="main_fourzt_wz">
+<div class="main_fourzt_one">最新{dede:type typeid='13'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+ 
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' typeid=13 row='14'}
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+ 
+<div class="main_fourzt_wz mgt8">
+<div class="main_fourzt_one">优秀{dede:type typeid='13'}[field:typename/]{/dede:type}</div>
+<div class="main_fourzt_twoh"></div></div>
+<div class="main_twobh">
+<ul>
+{dede:arclist titlelen='20' typeid=13 row='14' orderby='hot'}
+<li><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+ 
+<div class="main_threerzw">
+<div class="main_threert"><span class="fr hong">{dede:type typeid='13'}<a href='[field:typelink /]'>更多&gt;&gt;</a>{/dede:type}</span><span class="main_threert_kz">写景作文</span></div>
+ 
+<div class="main_threerb">
+<dl>
+{dede:arclist titlelen='20' typeid=13 row='16' flag='c' }
+<dd><a href="[field:arcurl /]" title="[field:title /]">[field:title /]</a></dd>
+{/dede:arclist}
+</dl>
+</div>
+</div>
+</div>
+<!--endmiann_two-->
+<div class="special1"><ul>
+{dede:arclist titlelen='20' typeid=23 row='16' }
+<li><a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist}
+ 
+</ul></div>
+<!--endmiann_two-->
+<div class="linkfz">
+<div class="linkfz_t"><b>友情链接</b>　　客服QQ:{dede:global.cfg_qq/}</div>
+<div class="linkfz_n">
+<ul>
+{dede:flink/}
+<li><a href="http://www.unn114.com/" target="_blank">源码下载</a> </li>
+</ul>
+</div>
+</div>
+ 
+<div class="nav_flink">
+<a href="#" rel="nofollow">关于我们</a>|<a target="_blank" href="http://www.t262.com/support/advertise.asp">版权声明</a>|<a target="_blank" href="http://www.t262.com/sitemap.html" rel="nofollow">网站地图</a>|<a href="http://www.t262.com/zuowen/sitemap.xml">引擎地图</a>
+</div>
+ 
+<div class="footer">
+<div class="footer_n">
+<p><font color=#FF0000>声明※中国作文网发布的<所有作文>版权归原作者所有,如需商业用途或转载请与原作者联系。</font></p>
+<p>Copyright &copy; 2009-2013 <a href="http://www.yiquantou.com">飘花电影网</a> All Rights Reserved.</p>
+<p><script language="javascript" src="/adfile/footer1.js"></script></p>
+</div>
+</div>
+</body>
+</html>

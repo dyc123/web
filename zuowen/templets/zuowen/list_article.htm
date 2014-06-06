@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skins/t262/style.css" rel="stylesheet" type="text/css" />
+<link href="/skins/2013/main.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script language="javascript" src="/js/zuowen.js"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="position">您当前的位置： {dede:field name='position'/}</div>
+<div class="home">
+<div class="main_left">
+<div class="main_left_s"></div>
+<div class="news">
+<div class="clear"></div>
+<div class="news_list"><script src='/plus/ad_js.php?aid=5' language='javascript'></script>
+
+   {dede:list pagesize='50'}
+  <ul><li><span><em class="newDate">[field:pubdate function="GetDateMK(@me)"/]</em></span> <a href="[field:arcurl/]" target="_blank"  title="[field:title/]">[field:title/]</a></li></ul>
+      {/dede:list}
+</div></div>
+<div class="pagelink">    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+</div>
+</div>
+<div class="main_right">
+<div class="right_title">最新作文</div>
+<div class="right_rank"><ol>
+ {dede:arclist titlelen=20 row=10 orderby=pubdate}
+<li class='no[field:global runphp="yes" name=autoindex]
+$a="";
+$b="";
+$c="";
+if (@me > 3) @me = $c.@me.$b;
+else @me = $a.@me.$b;
+[/field:global]'><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+      {/dede:arclist}
+</ol></div>
+<div class="main_right_x"></div>
+<div class="ad_r"><script src='/plus/ad_js.php?aid=6' language='javascript'></script>
+</div>
+<div class="right_title">推荐作文</div>
+<div class="right_rank"><ol>
+ {dede:arclist titlelen=20 row=10 flag='c'}
+<li class='no[field:global runphp="yes" name=autoindex]
+$a="";
+$b="";
+$c="";
+if (@me > 3) @me = $c.@me.$b;
+else @me = $a.@me.$b;
+[/field:global]'><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+      {/dede:arclist}
+</ol></div>
+<div class="main_right_x"></div>
+<div class="ad_r"><script src='/plus/ad_js.php?aid=7' language='javascript'></script>
+</div>
+<div  class="right_title">优秀作文</div>
+<div class="right_rank"><ol>
+ {dede:arclist titlelen=20 row=10 orderby=hot}
+<li class='no[field:global runphp="yes" name=autoindex]
+$a="";
+$b="";
+$c="";
+if (@me > 3) @me = $c.@me.$b;
+else @me = $a.@me.$b;
+[/field:global]'><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+      {/dede:arclist}
+</ol></div>
+<div class="main_right_x"></div>
+<div class="right_title">随机作文</div>
+<div class="right_link"><ol>
+ {dede:arclist titlelen=20 row=10 orderby=rand}
+<li class='no[field:global runphp="yes" name=autoindex]
+$a="";
+$b="";
+$c="";
+if (@me > 3) @me = $c.@me.$b;
+else @me = $a.@me.$b;
+[/field:global]'><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+      {/dede:arclist}
+</ol></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="home_x"></div>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

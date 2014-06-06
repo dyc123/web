@@ -1,0 +1,15 @@
+INSERT INTO `dede_search_keywords` VALUES('1','童年','童年','503','98','1394378860','0','0');
+INSERT INTO `dede_search_keywords` VALUES('2','幸福','幸福','500','118','1394378424','0','0');
+INSERT INTO `dede_search_keywords` VALUES('3','生活','生活','500','152','1394378433','0','0');
+INSERT INTO `dede_search_keywords` VALUES('4','在这里搜索...','在这里 搜索 ...','3','2','1394378666','0','0');
+INSERT INTO `dede_search_keywords` VALUES('5','wdwddw','wdwddw','1','0','1394378704','0','0');
+INSERT INTO `dede_search_keywords` VALUES('6','家乡','家乡','6','116','1394378751','0','0');
+INSERT INTO `dede_search_keywords` VALUES('7','hh','hh','1','0','1394378763','0','0');
+INSERT INTO `dede_search_keywords` VALUES('8','你啊','你啊','1','0','1394378777','0','0');
+INSERT INTO `dede_search_keywords` VALUES('9','我的理想','我的 理想','1','686','1394378872','0','0');
+INSERT INTO `dede_search_keywords` VALUES('10','感恩父母','感恩 父母','2','187','1394378906','0','0');
+INSERT INTO `dede_search_keywords` VALUES('11','拼搏','拼搏','1','0','1394378917','0','0');
+INSERT INTO `dede_search_keywords` VALUES('12','努力','努力','1','11','1394378924','0','0');
+INSERT INTO `dede_search_keywords` VALUES('13','敬佩','敬佩','2','16','1394378958','0','0');
+INSERT INTO `dede_search_keywords` VALUES('14',' plus search.php searchtype ti','plus search.php searchtype ti','1','2','1394378952','0','0');
+INSERT INTO `dede_search_keywords` VALUES('15','我的烦恼','我的 烦恼','1','664','1394378977','0','0');

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0020)http://www.dfmy.net/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML><HEAD><META 
+content="IE=10.000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=gb2312"> 
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<style type="text/css" media="all">
+ .menu13 a{font-family:"微软雅黑"; }
+ .txt{ line-height:24px;}
+ .bg{ background: #f8f8f8; /*border-bottom:solid 1px #dadada;*/}
+ .pager-current li{ height:24px; float:left; }
+.gsjj{ font-family:"微软雅黑"; font-size:16px; color:#62875e;}
+</style>
+ 
+<!--<SCRIPT src="/images/rollImage.js" type="text/javascript"></SCRIPT>-->
+ 
+<META name="GENERATOR" content="MSHTML 10.00.9200.16576">
+<link href="/css.css" rel="stylesheet" type="text/css">
+<link href="/home.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/css/sdmenu.css" />
+<script type="text/javascript" src="/js/sdmenu.js"></script>
+<script language="javascript" type="text/javascript" src="/js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript" src="/js/menu.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var myMenu;
+window.onload = function() {
+myMenu = new SDMenu("my_menu");
+myMenu.init();
+};
+// ]]>
+</script>
+<SCRIPT src="/js/public.js" type="text/javascript"></SCRIPT>
+</HEAD> 
+<BODY>
+<CENTER>
+<div class="header">
+
+<div id="bgtopf">
+
+<DIV class="toptk">
+<A href="http://www.iviedu.com/" target="_blank"><img src="/accou/top2.jpg" width="1010" height="123" /></a>
+</DIV>
+</DIV>
+  </div>
+
+  <div id="menuwp">
+<div id="menu">
+<ul id="nav">
+
+      <li class="mainleve2"><span class="note"><a href="/">首页</a></span></li> 
+   {dede:channelartlist typeid='top'}
+    <li class="mainlevel">{dede:type}<a href='[field:typeurl/]' >[field:typename/]</a>{/dede:type}
+	
+    <ul class="sub_nav_01">
+    <span class="Triangle_con"></span>
+	{dede:channel type='son'}
+    <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
+{/dede:channel}
+    </ul>
+	
+    </li>
+{/dede:channelartlist}
+    
+</ul>
+</div>
+</div>
+    <DIV id="heightspace"></DIV>
+    <DIV id="body">
+ <DIV id="contant-cen">
+   <div class="list-left">
+   <div class="list-tu"><img src="/images/left_top_img.gif" width="199" height="91"></div>
+  <div id="left">
+<div class="list-t"></div>
+  <div class="list-c">
+<div style="float: left" id="my_menu" class="sdmenu">
+{dede:channelartlist typeid='1,5,9'}
+  <div> 
+    <span>{dede:field name='typename'/}</span> 
+   {dede:channel type='son' noself='yes'}
+    <a href='[field:typeurl/]'>[field:typename/]</a>
+{/dede:channel}
+  </div>
+  {/dede:channelartlist}
+
+  
+</div></div>
+</div></div>
+<div class="content1">
+     <div class="contant">
+     <div class="contant-top">
+       <tr>
+			<td align="left" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tbody><tr>
+					<td>
+						<table width="655" border="0" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<td width="244" class="gsjj" style="padding-left:20px">{dede:field.typename/}</td>
+							<td width="411" align="right" valign="bottom" class="dotum11px"><img src="/images/home.gif" width="12" height="9"> 
+							{dede:field name='position' function="strip_tags(@me)"/}</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="image/blank.gif" width="1" height="1"></td>
+				</tr>
+				<tr>
+					<td background="image/tit_bg2.gif"><img src="/images/xi_07.jpg" width="201" height="1"></td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+     </div>
+     <div class="com-tant"><img src="/images/tu_03.jpg" width="680" height="86"></div>
+     </div>
+     <div class="com-t">
+      <div class="com-we"></div>
+       <div class="com-txt">
+       {dede:field.content/}
+       </div>
+      
+     </div>
+   
+ </DIV></DIV>
+<DIV id="heightspace"></DIV></DIV></CENTER>
+<DIV id="footbg">
+  <CENTER>
+<DIV class="foot">
+<DIV class="left"></DIV>
+<DIV class="right">ADD:{dede:global.cfg_add/}<br />
+TEL:{dede:global.cfg_tel/} FAX:{dede:global.cfg_fax/} P.C:{dede:global.cfg_pc/} <br />
+website:{dede:global.cfg_basehost/}  E-mail:{dede:global.cfg_email/} <br />
+Copyright 2013-2014 jxyimi.com 版权所有 {dede:global.cfg_beian/}<BR>
+</DIV>
+ </DIV></CENTER></DIV>
+
+</body></HTML>
